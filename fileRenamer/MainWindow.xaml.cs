@@ -50,6 +50,8 @@ namespace fileRenamer
             Foto.Close();
             File.Copy(path, fullFileName);
             File.Delete(path);
+
+            //Метод Directory.GetFiles (String)
         }
     }
 }
