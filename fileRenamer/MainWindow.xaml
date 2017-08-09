@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:fileRenamer"
         mc:Ignorable="d"
-        Title="reNamer" Height="137.722" Width="522.929" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="reNamer" Height="390.247" Width="522.929" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <TextBox x:Name="txtPath" Margin="20,29,20,0" TextWrapping="Wrap" Height="23" VerticalAlignment="Top"/>
         <Button x:Name="btnReName" Content="reName" HorizontalAlignment="Left" Margin="420,67,0,0" VerticalAlignment="Top" Width="75" Click="btnReName_Click"/>
-        <Label x:Name="label1" Content="Label" HorizontalAlignment="Left" Margin="20,67,0,0" VerticalAlignment="Top" Width="145"/>
+        <TextBlock x:Name="txt" HorizontalAlignment="Left" Margin="74,128,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="184" Width="276"/>
     </Grid>
 </Window>
