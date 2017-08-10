@@ -1,16 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 using System.Windows.Media.Imaging;
 
 namespace BusinessLogic
 {
-    public class reNamer
+    public interface IReNamer
     {
-        private string GetExif(string path)
+        string GetExif(string path);
+        string NameChange(string path);
+        string NameCreate(string path);
+        string MakeGoodName(string fileName);
+        void ReName();
+    }
+    public class reNamer : IReNamer
+    {
+        public string GetExif(string path)
         {
             FileStream Foto = File.Open(path, FileMode.Open, FileAccess.Read); // открыли файл для чтения
             BitmapDecoder decoder = JpegBitmapDecoder.Create(Foto, BitmapCreateOptions.IgnoreColorProfile, BitmapCacheOption.Default); //"распаковали" снимок и создали объект decoder
@@ -20,7 +23,7 @@ namespace BusinessLogic
             return fileName;
         }
 
-        private string NameChange(string path)
+        public string NameChange(string path)
         {
             string fileName = GetExif(path) + "(2)" + System.IO.Path.GetExtension(path);
 
@@ -32,7 +35,7 @@ namespace BusinessLogic
             return fullFileName;
         }
 
-        private string NameCreate(string path)
+        public string NameCreate(string path)
         {
             string fileName = GetExif(path) + System.IO.Path.GetExtension(path);
 
@@ -44,13 +47,7 @@ namespace BusinessLogic
             return fullFileName;
         }
 
-        private void ClosePhoto(string path)
-        {
-            FileStream Foto = File.Open(path, FileMode.Open, FileAccess.Read);
-            Foto.Close();
-        }
-
-        private string MakeGoodName(string fileName)
+        public string MakeGoodName(string fileName)
         {
             fileName = fileName.Replace(" ", "_");
             fileName = fileName.Replace(":", "-");

@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="reNamer" Height="129.247" Width="405.929" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
-        <Button x:Name="btnReName" Content="Do!" HorizontalAlignment="Left" Height="47" Margin="46,25,0,0" VerticalAlignment="Top" Width="310"/>
+        <Button x:Name="btnReName" Content="Do!" HorizontalAlignment="Left" Height="47" Margin="46,25,0,0" VerticalAlignment="Top" Width="310" Click="btnReName_Click"/>
     </Grid>
 </Window>
