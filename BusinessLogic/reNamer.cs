@@ -60,7 +60,8 @@ namespace BusinessLogic
 
             foreach (string path in dirs)
             {
-                if (!File.Exists(NameCreate(path))) File.Copy(path, NameCreate(path));
+                string newName = NameCreate(path);
+                if (!File.Exists(newName)) File.Copy(path, newName);
                 else
                 {
                     File.Copy(path, NameChange(path), true);
