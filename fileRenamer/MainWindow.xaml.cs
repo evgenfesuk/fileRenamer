@@ -34,16 +34,19 @@ namespace fileRenamer
             string dir = System.IO.Path.GetDirectoryName(path);
             dir = Directory.GetCurrentDirectory();*/
 
-            string[] dirs = Directory.GetFiles(Directory.GetCurrentDirectory(), "*.jpg");
+            string[] dirs = Directory.GetFiles(Directory.GetCurrentDirectory(), "*.jpg"); // ищем все картинки по расширению
 
-            foreach (string path in dirs)
+            foreach (string path in dirs) // path автоматически вытягивается при каждом проходе из dir
             {
-                if (!File.Exists(NameCreate(path)))  File.Copy(path, NameCreate(path));
+                string newName = NameCreate(path); // создаём имя для файла в path, делаем это один раз для повышения скорости работы программы
+                if (!File.Exists(newName))  File.Copy(path, newName); // если файла с таким именем нету делаем копию оригинального файла с новым именем
                 else
                 {
-                    File.Copy(path, NameChange(path), true);
+                    File.Copy(path, NameChange(path), true); // иначе меняем имя
                 }
-                File.Delete(path);
+                
+                // File.Equals(path, newName); неплохо бы добавить проверку двух файлов для избежания ошибок при копировании и удалении единственной копии файла
+                File.Delete(path); // удаляем оригинальный файл
             }
 
         }
