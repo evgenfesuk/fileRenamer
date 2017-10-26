@@ -3,10 +3,6 @@ using System.Windows.Media.Imaging;
 
 namespace BusinessLogic
 {
-    public interface IReNamer
-    {
-        void ReName();
-    }
     public static class reNamer
     {
         public static void rename()
