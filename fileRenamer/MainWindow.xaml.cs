@@ -15,8 +15,7 @@ namespace fileRenamer
 
         private void btnReName_Click(object sender, RoutedEventArgs e)
         {
-            reNamer r = new reNamer();
-            r.ReName();
+            reNamer.rename();
         }
     }
 }
