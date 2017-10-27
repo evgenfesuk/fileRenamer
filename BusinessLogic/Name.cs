@@ -15,7 +15,7 @@ namespace BusinessLogic
 
             fileName = makeGoodName(fileName);
 
-            string fullFileName = Path.Combine(Directory.GetCurrentDirectory(), fileName);
+            string fullFileName = Path.Combine(Path.GetDirectoryName(path), fileName);
 
 
             return fullFileName;
@@ -26,8 +26,8 @@ namespace BusinessLogic
             string fileName = GetExif.getExif(path) + "(2)" + Path.GetExtension(path);
 
             fileName = makeGoodName(fileName);
-
-            string fullFileName = Path.Combine(Directory.GetCurrentDirectory(), fileName);
+            
+            string fullFileName = Path.Combine(Path.GetDirectoryName(path), fileName);
 
 
             return fullFileName;

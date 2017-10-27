@@ -5,9 +5,9 @@ namespace BusinessLogic
 {
     public static class reNamer
     {
-        public static void rename(string imgFormat)
+        public static void rename(string imgFormat, string _path)
         {
-            string[] dirs = Directory.GetFiles(Directory.GetCurrentDirectory(), /*"*.jpg"*/imgFormat);
+            string[] dirs = Directory.GetFiles(/*Directory.GetCurrentDirectory()*/_path, /*"*.jpg"*/imgFormat);
 
             foreach (string path in dirs)
             {
