@@ -1,13 +1,14 @@
 ﻿using System.IO;
+using System.Windows.Forms;
 using System.Windows.Media.Imaging;
 
 namespace BusinessLogic
 {
     public static class reNamer
     {
-        public static void rename()
+        public static void rename(string imgFormat, string _path)
         {
-            string[] dirs = Directory.GetFiles(Directory.GetCurrentDirectory(), "*.jpg");
+            string[] dirs = Directory.GetFiles(_path, imgFormat);
 
             foreach (string path in dirs)
             {
@@ -19,6 +20,8 @@ namespace BusinessLogic
                 }
                 File.Delete(path);
             }
+            
+            MessageBox.Show("Done!");
         }
     }
 }
