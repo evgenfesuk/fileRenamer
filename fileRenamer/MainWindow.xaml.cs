@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using BusinessLogic;
+using System.Windows.Controls;
 
 namespace fileRenamer
 {
@@ -15,7 +16,12 @@ namespace fileRenamer
 
         private void btnReName_Click(object sender, RoutedEventArgs e)
         {
-            reNamer.rename();
+            reNamer.rename((cmbx.SelectedItem as ComboBoxItem).Content.ToString());
+        }
+
+        private void ComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            
         }
     }
 }
