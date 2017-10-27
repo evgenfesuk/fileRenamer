@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="reNamer" Height="163.581" Width="339.263" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
-        <Button x:Name="btnReName" Content="Rename" HorizontalAlignment="Left" Height="20" Margin="242,77,0,0" VerticalAlignment="Top" Width="70" Click="btnReName_Click"/>
+        <Button x:Name="btnReName" Content="Rename" HorizontalAlignment="Left" Height="20" Margin="242,77,0,0" VerticalAlignment="Top" Width="70" Click="btnReName_Click" IsEnabled="False"/>
         <ComboBox x:Name="cmbx" HorizontalAlignment="Left" Margin="242,41,0,0" VerticalAlignment="Top" Width="70" SelectedIndex="0">
             <ComboBoxItem>*.jpg</ComboBoxItem>
             <ComboBoxItem>*.bmp</ComboBoxItem>
