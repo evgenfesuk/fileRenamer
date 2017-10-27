@@ -19,9 +19,5 @@ namespace fileRenamer
             reNamer.rename((cmbx.SelectedItem as ComboBoxItem).Content.ToString());
         }
 
-        private void ComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {
-            
-        }
     }
 }

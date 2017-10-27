@@ -11,11 +11,11 @@ namespace BusinessLogic
     {
         public static string Create(string path)
         {
-            string fileName = GetExif.getExif(path) + System.IO.Path.GetExtension(path);
+            string fileName = GetExif.getExif(path) + Path.GetExtension(path);
 
             fileName = makeGoodName(fileName);
 
-            string fullFileName = System.IO.Path.Combine(Directory.GetCurrentDirectory(), fileName);
+            string fullFileName = Path.Combine(Directory.GetCurrentDirectory(), fileName);
 
 
             return fullFileName;
@@ -23,11 +23,11 @@ namespace BusinessLogic
 
         public static string Change(string path)
         {
-            string fileName = GetExif.getExif(path) + "(2)" + System.IO.Path.GetExtension(path);
+            string fileName = GetExif.getExif(path) + "(2)" + Path.GetExtension(path);
 
             fileName = makeGoodName(fileName);
 
-            string fullFileName = System.IO.Path.Combine(Directory.GetCurrentDirectory(), fileName);
+            string fullFileName = Path.Combine(Directory.GetCurrentDirectory(), fileName);
 
 
             return fullFileName;
