@@ -14,9 +14,11 @@ namespace fileRenamer_v._2._0_
 {
     public partial class Form1 : Form
     {
+        ProgressBar bar;
         public Form1()
         {
             InitializeComponent();
+            bar = new ProgressBar();
             cmbx.SelectedItem = "*.jpg";
         }
 
@@ -30,7 +32,7 @@ namespace fileRenamer_v._2._0_
 
         private void btnReName_Click(object sender, EventArgs e)
         {
-            reNamer.rename(cmbx.SelectedItem.ToString(), _path);
+            reNamer.rename(cmbx.SelectedItem.ToString(), _path, bar);
         }
     }
 }
