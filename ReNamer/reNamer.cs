@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Windows.Forms;
+using prgrsBar;
 
 namespace ReNamer
 {
@@ -11,11 +12,12 @@ namespace ReNamer
 
             int filesCount = 0;
             foreach (string path in dirs) filesCount++;
-            bar.Value = 0;
-            bar.Maximum = filesCount;
+
+            p_bar.Init(bar, filesCount);
+
             foreach (string path in dirs)
             {
-                if (bar.Value < filesCount) bar.Value++;
+                p_bar.Run(bar, filesCount);
                 string newName = Name.Name.Create(path);
                 if (!File.Exists(newName)) File.Copy(path, newName);
                 else

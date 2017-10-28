@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BB489282-6D16-49EC-8215-C207A8582929}</ProjectGuid>
+    <ProjectGuid>{66CFB1FE-6CC0-46B7-8289-CD62DBD32369}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ReNamer</RootNamespace>
-    <AssemblyName>ReNamer</AssemblyName>
+    <RootNamespace>prgrsBar</RootNamespace>
+    <AssemblyName>prgrsBar</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -42,18 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="reNamer.cs" />
+    <Compile Include="p_bar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Name\Name.csproj">
-      <Project>{524198c7-90ca-4d17-b932-2d2edacb0393}</Project>
-      <Name>Name</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\prgrsBar\prgrsBar.csproj">
-      <Project>{66cfb1fe-6cc0-46b7-8289-cd62dbd32369}</Project>
-      <Name>prgrsBar</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
