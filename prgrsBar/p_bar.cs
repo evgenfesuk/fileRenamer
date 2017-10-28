@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace prgrsBar
 {
@@ -15,9 +10,10 @@ namespace prgrsBar
             p_bar.Maximum = max_value;
         }
 
-        public static void Run(ProgressBar p_bar, int filesCount)
+        public static void Run(ProgressBar p_bar, int filesCount, Label lbl_totalFiles, int filesDone)
         {
             if (p_bar.Value < filesCount) p_bar.Value++;
+            lbl_totalFiles.Text = filesDone.ToString();
         }
     }
 }
