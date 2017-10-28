@@ -12,6 +12,7 @@ namespace ReNamer
             int filesCount = 0;
             foreach (string path in dirs) filesCount++;
             bar.Value = 0;
+            bar.Maximum = filesCount;
             foreach (string path in dirs)
             {
                 if (bar.Value < filesCount) bar.Value++;
@@ -23,8 +24,6 @@ namespace ReNamer
                 }
                 File.Delete(path);
             }
-
-            MessageBox.Show("Done!");
         }
     }
 }

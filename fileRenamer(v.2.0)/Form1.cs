@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dialog;
 using ReNamer;
@@ -18,7 +11,7 @@ namespace fileRenamer_v._2._0_
         public Form1()
         {
             InitializeComponent();
-            bar = new ProgressBar();
+            bar = progressBar1;
             cmbx.SelectedItem = "*.jpg";
         }
 
