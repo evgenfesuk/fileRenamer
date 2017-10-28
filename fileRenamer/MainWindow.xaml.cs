@@ -1,7 +1,7 @@
 ﻿using System.Windows;
-using BusinessLogic;
 using System.Windows.Controls;
-
+using Dialog;
+using ReNamer;
 
 
 namespace fileRenamer
@@ -25,7 +25,7 @@ namespace fileRenamer
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            _path = openDlg.SelectFolder();
+            _path = Dialog.openDlg.SelectFolder();
             btnReName.IsEnabled = true;
         }
     }

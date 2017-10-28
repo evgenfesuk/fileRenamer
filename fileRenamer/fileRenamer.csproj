@@ -126,12 +126,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
-      <Project>{a7d379e7-4be2-43cb-b24a-01a080c6330e}</Project>
-      <Name>BusinessLogic</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.5.2 %28x86 и x64%29</ProductName>
@@ -142,6 +136,16 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dialog\Dialog.csproj">
+      <Project>{e02439c1-8e66-49db-b7eb-e119298dc2e4}</Project>
+      <Name>Dialog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReNamer\ReNamer.csproj">
+      <Project>{bb489282-6d16-49ec-8215-c207a8582929}</Project>
+      <Name>ReNamer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

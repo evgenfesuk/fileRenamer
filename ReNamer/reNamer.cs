@@ -1,8 +1,7 @@
 ﻿using System.IO;
 using System.Windows.Forms;
-using System.Windows.Media.Imaging;
 
-namespace BusinessLogic
+namespace ReNamer
 {
     public static class reNamer
     {
@@ -12,15 +11,15 @@ namespace BusinessLogic
 
             foreach (string path in dirs)
             {
-                string newName = Name.Create(path);
+                string newName = Name.Name.Create(path);
                 if (!File.Exists(newName)) File.Copy(path, newName);
                 else
                 {
-                    File.Copy(path, Name.Change(path), true);
+                    File.Copy(path, Name.Name.Change(path), true);
                 }
                 File.Delete(path);
             }
-            
+
             MessageBox.Show("Done!");
         }
     }
