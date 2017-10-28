@@ -1,6 +1,5 @@
 ﻿using System.IO;
 
-
 namespace Name
 {
     public static class Name
