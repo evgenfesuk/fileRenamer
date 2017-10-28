@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dialog", "Dialog\Dialog.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exif", "Exif\Exif.csproj", "{A7D379E7-4BE2-43CB-B24A-01A080C6330E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fileRenamer(v.2.0)", "fileRenamer(v.2.0)\fileRenamer(v.2.0).csproj", "{62F46A1A-4AC4-478A-83A2-2FA412E071EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{A7D379E7-4BE2-43CB-B24A-01A080C6330E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7D379E7-4BE2-43CB-B24A-01A080C6330E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7D379E7-4BE2-43CB-B24A-01A080C6330E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62F46A1A-4AC4-478A-83A2-2FA412E071EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62F46A1A-4AC4-478A-83A2-2FA412E071EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62F46A1A-4AC4-478A-83A2-2FA412E071EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62F46A1A-4AC4-478A-83A2-2FA412E071EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
