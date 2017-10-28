@@ -45,7 +45,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BusinessLogic\Exif.csproj">
+    <ProjectReference Include="..\Exif\Exif.csproj">
       <Project>{a7d379e7-4be2-43cb-b24a-01a080c6330e}</Project>
       <Name>Exif</Name>
     </ProjectReference>
