@@ -17,7 +17,8 @@ namespace ReNamer
 
             foreach (string path in dirs)
             {
-                Name.Name.Create(path);
+                //Name.Name.Create(path);
+                Name.Name.fileCreate(path);
                 filesDone++;
                 p_bar.Run(bar, filesCount, lbl_totalFiles, filesDone);
             }
