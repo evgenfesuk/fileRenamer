@@ -13,6 +13,7 @@ namespace prgrsBar
         public static void Run(ProgressBar p_bar, int filesCount, Label lbl_totalFiles, int filesDone)
         {
             if (p_bar.Value < filesCount) p_bar.Value++;
+            Application.DoEvents();
             lbl_totalFiles.Text = filesDone.ToString();
         }
     }
