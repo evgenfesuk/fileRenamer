@@ -26,17 +26,8 @@ namespace Name
             int counter = 0;
             string name = Create(path);
 
-            while (File.Exists(name))
-            {
-                counter++;
-                name = Create(path, counter);
-            }
+            while (File.Exists(name)) name = Create(path, ++counter);
             File.Copy(path, name);
-            fileDelete(path);
-        }
-        
-        private static void fileDelete(string path)
-        {
             File.Delete(path);
         }
     }
