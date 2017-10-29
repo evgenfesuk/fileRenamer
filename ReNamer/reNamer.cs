@@ -4,9 +4,9 @@ using prgrsBar;
 
 namespace ReNamer
 {
-    public static class reNamer
+    public static class ReNamer
     {
-        public static void rename(string imgFormat, string _path, ProgressBar bar, Label lbl_totalFiles)
+        public static void Rename(string imgFormat, string _path, ProgressBar bar, Label lbl_totalFiles)
         {
             string[] dirs = Directory.GetFiles(_path, imgFormat);
 
@@ -17,8 +17,7 @@ namespace ReNamer
 
             foreach (string path in dirs)
             {
-                //Name.Name.Create(path);
-                Name.Name.fileCreate(path);
+                Name.Name.FileCreate(path);
                 filesDone++;
                 p_bar.Run(bar, filesCount, lbl_totalFiles, filesDone);
             }
