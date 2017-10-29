@@ -17,13 +17,7 @@ namespace ReNamer
 
             foreach (string path in dirs)
             {
-                string newName = Name.Name.Create(path);
-                if (!File.Exists(newName)) File.Copy(path, newName);
-                else
-                {
-                    File.Copy(path, Name.Name.Change(path), true);
-                }
-                File.Delete(path);
+                Name.Name.Create(path);
                 filesDone++;
                 p_bar.Run(bar, filesCount, lbl_totalFiles, filesDone);
             }
