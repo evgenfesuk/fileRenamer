@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:fileRenamer"
         mc:Ignorable="d"
-        Title="reNamer" Height="94.914" Width="349.263" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="reNamer" Height="126.47" Width="349.263" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="29*"/>
@@ -19,6 +19,8 @@
         </ComboBox>
         <Label Content="File format" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="70"/>
         <Button Content="Choose folder" HorizontalAlignment="Left" Margin="171,12,0,0" VerticalAlignment="Top" Width="80" Height="22" Click="Button_Click"/>
-        <ProgressBar x:Name="prgBar" HorizontalAlignment="Left" Height="10" Margin="17,41,0,0" VerticalAlignment="Top" Width="309" Grid.ColumnSpan="2"/>
+        <ProgressBar x:Name="progressBar1" HorizontalAlignment="Left" Height="10" Margin="17,41,0,0" VerticalAlignment="Top" Width="309" Grid.ColumnSpan="2"/>
+        <Label Content="Total files:" HorizontalAlignment="Left" Margin="193,56,0,0" VerticalAlignment="Top" Width="76"/>
+        <Label x:Name="lbl_total_files" Content="0" HorizontalAlignment="Left" Margin="5,56,0,0" VerticalAlignment="Top" Width="52" Grid.Column="1"/>
     </Grid>
 </Window>

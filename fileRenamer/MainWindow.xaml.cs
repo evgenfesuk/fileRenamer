@@ -20,7 +20,7 @@ namespace fileRenamer
 
         private void btnReName_Click(object sender, RoutedEventArgs e)
         {
-            reNamer.rename((cmbx.SelectedItem as ComboBoxItem).Content.ToString(), _path);
+            ReNamer.ReNamer.Rename((cmbx.SelectedItem as ComboBoxItem).Content.ToString(), _path, progressBar1, lbl_total_files);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
