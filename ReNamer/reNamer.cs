@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Windows.Forms;
 using prgrsBar;
+using System.Threading.Tasks;
 
 namespace ReNamer
 {
@@ -32,12 +33,21 @@ namespace ReNamer
 
             p_bar.Init(bar, filesCount);
 
-            foreach (string path in dirs)
+            /*foreach (string path in dirs)
             {
                 Name.Name.FileCreate(path);
                 filesDone++;
                 p_bar.Run(bar, filesCount, lbl_totalFiles, filesDone);
-            }
+            }*/
+
+            System.Object obj = new System.Object();
+
+            Parallel.ForEach(dirs, (path) => {
+                                                Name.Name.FileCreate(path);
+                                                filesDone++;
+                                                //p_bar.Run(bar, filesCount, lbl_totalFiles, filesDone);
+                                                //lock (obj);
+                                                });
         }
     }
 }
