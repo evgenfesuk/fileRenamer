@@ -16,6 +16,7 @@ namespace Name
 
         private static string MakeGoodName(string fileName)
         {
+            fileName = fileName.Substring(6, 4) + "." + fileName.Substring(3, 3) + fileName.Substring(0, 2) + fileName.Substring(10);
             fileName = fileName.Replace(" ", "_");
             fileName = fileName.Replace(":", "-");
             return fileName;
