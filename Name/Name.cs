@@ -6,17 +6,21 @@ namespace Name
     {
         private static string Create(string path)
         {
-            return Path.Combine(Path.GetDirectoryName(path), MakeGoodName(Exif.GetExif.getExif(path) + Path.GetExtension(path)));
+            string name = Exif.GetExif.getExif(path);
+            if (name!=null) return Path.Combine(Path.GetDirectoryName(path), MakeGoodName(name + Path.GetExtension(path)));
+            else return Path.Combine(Path.GetDirectoryName(path), ("No_date" + Path.GetExtension(path)));
         }
 
         private static string Create(string path, int counter)
         {
-            return Path.Combine(Path.GetDirectoryName(path), MakeGoodName(Exif.GetExif.getExif(path) + " (" + counter.ToString() + ")" + Path.GetExtension(path)));
+            string name = Exif.GetExif.getExif(path);
+            if (name != null)  return Path.Combine(Path.GetDirectoryName(path), MakeGoodName(Exif.GetExif.getExif(path) + " (" + counter.ToString() + ")" + Path.GetExtension(path)));
+            else return Path.Combine(Path.GetDirectoryName(path), ("No_date" + "_(" + counter.ToString() + ")" + Path.GetExtension(path)));
         }
 
         private static string MakeGoodName(string fileName)
         {
-            if (fileName!=null) fileName = fileName.Substring(6, 4) + "." + fileName.Substring(3, 3) + fileName.Substring(0, 2) + fileName.Substring(10);
+            fileName = fileName.Substring(6, 4) + "." + fileName.Substring(3, 3) + fileName.Substring(0, 2) + fileName.Substring(10);
             fileName = fileName.Replace(" ", "_");
             fileName = fileName.Replace(":", "-");
             return fileName;
