@@ -1,20 +1,21 @@
 ﻿using System.IO;
+using Exif;
 
-namespace Name
+namespace NameBL
 {
     public static class Name
     {
         private static string Create(string path)
         {
-            string name = Exif.GetExif.getExif(path);
+            string name = ExifInfo.Get(path);
             if (name!=null) return Path.Combine(Path.GetDirectoryName(path), MakeGoodName(name + Path.GetExtension(path)));
             else return Path.Combine(Path.GetDirectoryName(path), ("No_date" + Path.GetExtension(path)));
         }
 
         private static string Create(string path, int counter)
         {
-            string name = Exif.GetExif.getExif(path);
-            if (name != null)  return Path.Combine(Path.GetDirectoryName(path), MakeGoodName(Exif.GetExif.getExif(path) + " (" + counter.ToString() + ")" + Path.GetExtension(path)));
+            string name = ExifInfo.Get(path);
+            if (name != null)  return Path.Combine(Path.GetDirectoryName(path), MakeGoodName(name + " (" + counter.ToString() + ")" + Path.GetExtension(path)));
             else return Path.Combine(Path.GetDirectoryName(path), ("No_date" + "_(" + counter.ToString() + ")" + Path.GetExtension(path)));
         }
 

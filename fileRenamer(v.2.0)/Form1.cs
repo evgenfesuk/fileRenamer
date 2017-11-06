@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Dialog;
+using ReNamer;
 
 namespace fileRenamer_v._2._0_
 {
@@ -22,7 +23,7 @@ namespace fileRenamer_v._2._0_
 
         private void BtnReName_Click(object sender, EventArgs e)
         {
-            ReNamer.ReNamer.Rename(cmbx.SelectedItem.ToString(), _path, progressBar1, lbl_total_files);
+            ReName.Run(cmbx.SelectedItem.ToString(), _path, progressBar1, lbl_total_files);
         }
     }
 }

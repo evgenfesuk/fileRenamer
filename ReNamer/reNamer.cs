@@ -1,12 +1,13 @@
 ﻿using System.IO;
 using System.Windows.Forms;
 using prgrsBar;
+using NameBL;
 
 namespace ReNamer
 {
-    public static class ReNamer
+    public static class ReName
     {
-        public static void Rename(string imgFormat, string _path, ProgressBar bar, Label lbl_totalFiles)
+        public static void Run(string imgFormat, string _path, ProgressBar bar, Label lbl_totalFiles)
         {
             string[] dirs = Directory.GetFiles(_path, imgFormat);
 
@@ -17,13 +18,13 @@ namespace ReNamer
 
             foreach (string path in dirs)
             {
-                Name.Name.FileCreate(path);
+                Name.FileCreate(path);
                 filesDone++;
                 p_bar.Run(bar, filesCount, lbl_totalFiles, filesDone);
             }
         }
 
-        public static void Rename(string imgFormat, string _path, System.Windows.Controls.ProgressBar bar, System.Windows.Controls.Label lbl_totalFiles)
+        public static void Run(string imgFormat, string _path, System.Windows.Controls.ProgressBar bar, System.Windows.Controls.Label lbl_totalFiles)
         {
             string[] dirs = Directory.GetFiles(_path, imgFormat);
 
@@ -34,7 +35,7 @@ namespace ReNamer
 
             foreach (string path in dirs)
             {
-                Name.Name.FileCreate(path);
+                Name.FileCreate(path);
                 filesDone++;
                 p_bar.Run(bar, filesCount, lbl_totalFiles, filesDone);
             }

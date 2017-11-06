@@ -3,9 +3,9 @@ using System.Windows.Media.Imaging;
 
 namespace Exif
 {
-    public static class GetExif
+    public static class ExifInfo
     {
-        public static string getExif(string path)
+        public static string Get(string path)
         {
             FileStream Foto = File.Open(path, FileMode.Open, FileAccess.Read); // открыли файл для чтения
             BitmapDecoder decoder = JpegBitmapDecoder.Create(Foto, BitmapCreateOptions.IgnoreColorProfile, BitmapCacheOption.Default); //"распаковали" снимок и создали объект decoder
