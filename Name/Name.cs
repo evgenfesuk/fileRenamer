@@ -28,8 +28,8 @@ namespace Name
             string name = Create(path);
 
             while (File.Exists(name)) name = Create(path, ++counter);
-            File.Copy(path, name);
-            File.Delete(path);
+            FileInfo f = new FileInfo(path);
+            f.MoveTo(name);
         }
     }
 }
