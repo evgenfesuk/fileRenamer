@@ -5,22 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:fileRenamer"
         mc:Ignorable="d"
-        Title="reNamer" Height="126.47" Width="349.263" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="reNamer" Height="125.47" Width="374.763" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="29*"/>
-            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btnReName" Content="Rename" HorizontalAlignment="Left" Height="22" Margin="256,12,0,0" VerticalAlignment="Top" Width="70" Click="btnReName_Click" IsEnabled="False" Grid.ColumnSpan="2"/>
-        <ComboBox x:Name="cmbx" HorizontalAlignment="Left" Margin="91,12,0,0" VerticalAlignment="Top" Width="70" SelectedIndex="0" Height="22">
+        <Button x:Name="btnReName" Content="Rename" HorizontalAlignment="Left" Height="22" Margin="182,14,0,0" VerticalAlignment="Top" Width="70" Click="btnReName_Click" IsEnabled="False"
+                ToolTip="Rename images in the selected folder. Select a folder to activate this button" ToolTipService.ShowOnDisabled="True"/>
+        <ComboBox x:Name="cmbx" HorizontalAlignment="Left" Margin="18,14,0,0" VerticalAlignment="Top" Width="70" SelectedIndex="0" Height="22" ToolTip="Select image extention">
             <ComboBoxItem>*.jpg</ComboBoxItem>
             <ComboBoxItem>*.bmp</ComboBoxItem>
             <ComboBoxItem>*.tiff</ComboBoxItem>
         </ComboBox>
-        <Label Content="File format" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="70"/>
-        <Button Content="Choose folder" HorizontalAlignment="Left" Margin="171,12,0,0" VerticalAlignment="Top" Width="80" Height="22" Click="Button_Click"/>
-        <ProgressBar x:Name="progressBar1" HorizontalAlignment="Left" Height="10" Margin="17,41,0,0" VerticalAlignment="Top" Width="309" Grid.ColumnSpan="2"/>
+        <Button Content="Choose folder" HorizontalAlignment="Left" Margin="98,14,0,0" VerticalAlignment="Top" Width="80" Height="22" Click="Button_Click" ToolTip="Choose folder with images"/>
+        <ProgressBar x:Name="progressBar1" HorizontalAlignment="Left" Height="10" Margin="17,41,0,0" VerticalAlignment="Top" Width="329"/>
         <Label Content="Total files:" HorizontalAlignment="Left" Margin="193,56,0,0" VerticalAlignment="Top" Width="76"/>
-        <Label x:Name="lbl_total_files" Content="0" HorizontalAlignment="Left" Margin="5,56,0,0" VerticalAlignment="Top" Width="52" Grid.Column="1"/>
+        <Label x:Name="lbl_total_files" Content="0" HorizontalAlignment="Left" Margin="294,56,0,0" VerticalAlignment="Top" Width="52"/>
+        <Button x:Name="SortingBtn" Content="Move to folders" HorizontalAlignment="Left" Height="22" Margin="257,14,0,0" VerticalAlignment="Top" Width="89" ToolTip="Moving allready renamed files to the appropriate folders" Click="SortingBtn_Click" IsEnabled="False" ToolTipService.ShowOnDisabled="True"/>
     </Grid>
 </Window>

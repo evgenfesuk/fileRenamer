@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using Dialog;
 using ReNamer;
+using FolderCreator;
 
 
 namespace fileRenamer
@@ -27,6 +28,12 @@ namespace fileRenamer
         {
             _path = openDlg.SelectFolder();
             btnReName.IsEnabled = true;
+            SortingBtn.IsEnabled = true;
+        }
+
+        private void SortingBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Folder.Create((cmbx.SelectedItem as ComboBoxItem).Content.ToString(), _path, progressBar1, lbl_total_files);
         }
     }
 }

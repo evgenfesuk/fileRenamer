@@ -142,6 +142,10 @@
       <Project>{e02439c1-8e66-49db-b7eb-e119298dc2e4}</Project>
       <Name>Dialog</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FolderCreator\FolderCreator.csproj">
+      <Project>{53aae9e4-31ed-4fcd-ab6d-26bc75a65ddd}</Project>
+      <Name>FolderCreator</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ReNamer\ReNamer.csproj">
       <Project>{bb489282-6d16-49ec-8215-c207a8582929}</Project>
       <Name>ReNamer</Name>
