@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prgrsBar", "prgrsBar\prgrsB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FolderCreator", "FolderCreator\FolderCreator.csproj", "{53AAE9E4-31ED-4FCD-AB6D-26BC75A65DDD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj", "{CADAA209-4EA2-4D6A-814E-0353DB0D436B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{53AAE9E4-31ED-4FCD-AB6D-26BC75A65DDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53AAE9E4-31ED-4FCD-AB6D-26BC75A65DDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53AAE9E4-31ED-4FCD-AB6D-26BC75A65DDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CADAA209-4EA2-4D6A-814E-0353DB0D436B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CADAA209-4EA2-4D6A-814E-0353DB0D436B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CADAA209-4EA2-4D6A-814E-0353DB0D436B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CADAA209-4EA2-4D6A-814E-0353DB0D436B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

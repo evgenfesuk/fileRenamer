@@ -22,5 +22,6 @@
         <Label Content="Total files:" HorizontalAlignment="Left" Margin="193,56,0,0" VerticalAlignment="Top" Width="76"/>
         <Label x:Name="lbl_total_files" Content="0" HorizontalAlignment="Left" Margin="294,56,0,0" VerticalAlignment="Top" Width="52"/>
         <Button x:Name="SortingBtn" Content="Move to folders" HorizontalAlignment="Left" Height="22" Margin="257,14,0,0" VerticalAlignment="Top" Width="89" ToolTip="Moving allready renamed files to the appropriate folders" Click="SortingBtn_Click" IsEnabled="False" ToolTipService.ShowOnDisabled="True"/>
+        <Button x:Name="DeleteDublicatesBtn" Content="Delete dublicates" HorizontalAlignment="Left" Margin="18,58,0,0" VerticalAlignment="Top" Width="100" Height="22" Click="DeleteDublicatesBtn_Click"/>
     </Grid>
 </Window>
