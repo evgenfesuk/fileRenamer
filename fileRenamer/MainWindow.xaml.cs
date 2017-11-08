@@ -1,8 +1,5 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using Dialog;
-using ReNamer;
-using FolderCreator;
 using Logic;
 
 

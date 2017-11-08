@@ -45,13 +45,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DublicateChecker.cs" />
+    <Compile Include="Folder.cs" />
+    <Compile Include="GetExif.cs" />
+    <Compile Include="Name.cs" />
+    <Compile Include="openDlg.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\prgrsBar\prgrsBar.csproj">
-      <Project>{66cfb1fe-6cc0-46b7-8289-cd62dbd32369}</Project>
-      <Name>prgrsBar</Name>
-    </ProjectReference>
+    <Compile Include="p_bar.cs" />
+    <Compile Include="reNamer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
