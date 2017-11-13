@@ -10,7 +10,7 @@ namespace Logic
             string dn;
 
             int filesCount = 0, filesDone = 0;
-            foreach (string path in dirs) filesCount++;
+            foreach (string path in dirs) if (char.IsDigit(Path.GetFileNameWithoutExtension(path).Substring(0, 1), 0)) filesCount++;
 
             p_bar.Init(bar, filesCount);
 
