@@ -7,14 +7,22 @@ namespace Logic
         private static string Create(string path)
         {
             string name = ExifInfo.Get(path);
-            if (name!=null) return Path.Combine(Path.GetDirectoryName(path), MakeGoodName(name + Path.GetExtension(path)));
+            if (name!=null)
+            {
+                if (name== "Corrupted file") return Path.Combine(Path.GetDirectoryName(path), name + Path.GetExtension(path));
+                else return Path.Combine(Path.GetDirectoryName(path), MakeGoodName(name + Path.GetExtension(path)));
+            }
             else return Path.Combine(Path.GetDirectoryName(path), ("No_date" + Path.GetExtension(path)));
         }
 
         private static string Create(string path, int counter)
         {
             string name = ExifInfo.Get(path);
-            if (name != null)  return Path.Combine(Path.GetDirectoryName(path), MakeGoodName(name + " (" + counter.ToString() + ")" + Path.GetExtension(path)));
+            if (name != null)
+            {
+                if (name == "Corrupted file") return Path.Combine(Path.GetDirectoryName(path), name + " (" + counter.ToString() + ")" + Path.GetExtension(path));
+                else return Path.Combine(Path.GetDirectoryName(path), MakeGoodName(name + " (" + counter.ToString() + ")" + Path.GetExtension(path)));
+            }
             else return Path.Combine(Path.GetDirectoryName(path), ("No_date" + "_(" + counter.ToString() + ")" + Path.GetExtension(path)));
         }
 

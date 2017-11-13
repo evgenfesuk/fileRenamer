@@ -8,6 +8,20 @@ namespace Logic
         public static string Get(string path)
         {
             FileStream Foto = File.Open(path, FileMode.Open, FileAccess.Read); // открыли файл для чтения
+
+            try
+            {
+                return FindInfo(Foto);
+            }
+            catch(System.Exception)
+            {
+                Foto.Close();
+                return "Corrupted file";
+            }
+        }
+
+        static string FindInfo(FileStream Foto)
+        {
             BitmapDecoder decoder = JpegBitmapDecoder.Create(Foto, BitmapCreateOptions.IgnoreColorProfile, BitmapCacheOption.Default); //"распаковали" снимок и создали объект decoder
             BitmapMetadata TmpImgEXIF = (BitmapMetadata)decoder.Frames[0].Metadata.Clone(); //считали и сохранили метаданные
             string fileName = TmpImgEXIF.DateTaken;
