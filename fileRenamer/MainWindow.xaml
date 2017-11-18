@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:fileRenamer"
         mc:Ignorable="d"
-        Title="reNamer" Height="125.47" Width="374.763" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="reNamer" Height="125.119" Width="386.01" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -18,10 +18,11 @@
             <ComboBoxItem>*.tiff</ComboBoxItem>
         </ComboBox>
         <Button Content="Choose folder" HorizontalAlignment="Left" Margin="98,14,0,0" VerticalAlignment="Top" Width="80" Height="22" Click="Button_Click" ToolTip="Choose folder with images"/>
-        <ProgressBar x:Name="progressBar1" HorizontalAlignment="Left" Height="10" Margin="17,41,0,0" VerticalAlignment="Top" Width="329"/>
+        <ProgressBar x:Name="progressBar1" HorizontalAlignment="Left" Height="10" Margin="17,41,0,0" VerticalAlignment="Top" Width="340"/>
         <Label Content="Total files:" HorizontalAlignment="Left" Margin="193,56,0,0" VerticalAlignment="Top" Width="76"/>
         <Label x:Name="lbl_total_files" Content="0" HorizontalAlignment="Left" Margin="294,56,0,0" VerticalAlignment="Top" Width="52"/>
-        <Button x:Name="SortingBtn" Content="Move to folders" HorizontalAlignment="Left" Height="22" Margin="257,14,0,0" VerticalAlignment="Top" Width="89" ToolTip="Moving allready renamed files to the appropriate folders" Click="SortingBtn_Click" IsEnabled="False" ToolTipService.ShowOnDisabled="True"/>
-        <Button x:Name="DeleteDublicatesBtn" Content="Delete dublicates" HorizontalAlignment="Left" Margin="18,58,0,0" VerticalAlignment="Top" Width="100" Height="22" Click="DeleteDublicatesBtn_Click"/>
+        <Button x:Name="SortingBtn" Content="Move to folders" HorizontalAlignment="Left" Height="22" Margin="18,58,0,0" VerticalAlignment="Top" Width="89" ToolTip="Moving allready renamed files to the appropriate folders" Click="SortingBtn_Click" IsEnabled="False" ToolTipService.ShowOnDisabled="True"/>
+        <Button x:Name="DeleteDublicatesBtn" Content="Delete dublicates" HorizontalAlignment="Left" Margin="257,14,0,0" VerticalAlignment="Top" Width="100" Height="22" Click="DeleteDublicatesBtn_Click"/>
+        <CheckBox x:Name="checkMonthFolder" Content="Subfolders" HorizontalAlignment="Left" Margin="112,62,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

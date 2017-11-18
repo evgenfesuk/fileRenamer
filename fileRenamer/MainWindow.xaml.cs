@@ -31,7 +31,8 @@ namespace fileRenamer
 
         private void SortingBtn_Click(object sender, RoutedEventArgs e)
         {
-            Folder.Create((cmbx.SelectedItem as ComboBoxItem).Content.ToString(), _path, progressBar1, lbl_total_files);
+            if (checkMonthFolder.IsChecked==true) Folder.Create((cmbx.SelectedItem as ComboBoxItem).Content.ToString(), _path, progressBar1, lbl_total_files, true);
+            else Folder.Create((cmbx.SelectedItem as ComboBoxItem).Content.ToString(), _path, progressBar1, lbl_total_files);
         }
 
         private void DeleteDublicatesBtn_Click(object sender, RoutedEventArgs e)
