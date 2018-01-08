@@ -15,7 +15,7 @@
         <ComboBox x:Name="cmbx" HorizontalAlignment="Left" Margin="18,14,0,0" VerticalAlignment="Top" Width="70" SelectedIndex="0" Height="22" ToolTip="Select image extention">
             <ComboBoxItem>*.jpg</ComboBoxItem>
             <ComboBoxItem>*.bmp</ComboBoxItem>
-            <ComboBoxItem>*.tiff</ComboBoxItem>
+            <ComboBoxItem>*.tif</ComboBoxItem>
             <ComboBoxItem>*.png</ComboBoxItem>
         </ComboBox>
         <Button Content="Choose folder" HorizontalAlignment="Left" Margin="98,14,0,0" VerticalAlignment="Top" Width="80" Height="22" Click="Button_Click" ToolTip="Choose folder with images"/>
