@@ -7,16 +7,19 @@ namespace Logic
     {
         public static string Get(string path)
         {
-            FileStream Foto = File.Open(path, FileMode.Open, FileAccess.Read); // открыли файл для чтения
-
+            FileStream Foto = File.Open(Path.GetTempFileName(), FileMode.Open, FileAccess.Read);
             try
             {
+                Foto = File.Open(path, FileMode.Open, FileAccess.Read); // открыли файл для чтения
                 return FindInfo(Foto);
             }
             catch(System.Exception)
             {
-                Foto.Close();
                 return "Corrupted file";
+            }
+            finally
+            {
+                Foto.Close();
             }
         }
 
