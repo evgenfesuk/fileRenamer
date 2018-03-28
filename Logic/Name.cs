@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace Logic
 {
@@ -6,24 +7,24 @@ namespace Logic
     {
         private static string Create(string path)
         {
-            string name = ExifInfo.Get(path);
+            var name = ExifInfo.Get(path);
             if (name!=null)
             {
-                if (name== "Corrupted file")    return Path.Combine(Path.GetDirectoryName(path), name + Path.GetExtension(path));
-                else                            return Path.Combine(Path.GetDirectoryName(path), MakeGoodName(name + Path.GetExtension(path)));
+                return name== "Corrupted file" ? Path.Combine(Path.GetDirectoryName(path) ?? throw new InvalidOperationException(), name + Path.GetExtension(path)) : Path.Combine(Path.GetDirectoryName(path) ?? throw new InvalidOperationException(), MakeGoodName(name + Path.GetExtension(path)));
             }
-            else                                return Path.Combine(Path.GetDirectoryName(path), ("No date" + Path.GetExtension(path)));
+
+            return Path.Combine(Path.GetDirectoryName(path) ?? throw new InvalidOperationException(), ("No date" + Path.GetExtension(path)));
         }
 
         private static string Create(string path, int counter)
         {
-            string name = ExifInfo.Get(path);
+            var name = ExifInfo.Get(path);
             if (name != null)
             {
-                if (name == "Corrupted file")   return Path.Combine(Path.GetDirectoryName(path), name + " (" + counter.ToString() + ")" + Path.GetExtension(path));
-                else                            return Path.Combine(Path.GetDirectoryName(path), MakeGoodName(name + " (" + counter.ToString() + ")" + Path.GetExtension(path)));
+                return name == "Corrupted file" ? Path.Combine(Path.GetDirectoryName(path) ?? throw new InvalidOperationException(), name + " (" + counter + ")" + Path.GetExtension(path)) : Path.Combine(Path.GetDirectoryName(path) ?? throw new InvalidOperationException(), MakeGoodName(name + " (" + counter + ")" + Path.GetExtension(path)));
             }
-            else                                return Path.Combine(Path.GetDirectoryName(path), ("No date (" + counter.ToString() + ")" + Path.GetExtension(path)));
+
+            return Path.Combine(Path.GetDirectoryName(path) ?? throw new InvalidOperationException(), ("No date (" + counter + ")" + Path.GetExtension(path)));
         }
 
         private static string MakeGoodName(string fileName)
@@ -36,11 +37,11 @@ namespace Logic
 
         public static void FileCreate(string path)
         {
-            int counter = 1;
-            string name = Create(path);
+            var counter = 1;
+            var name = Create(path);
 
             while (File.Exists(name)) name = Create(path, ++counter);
-            FileInfo f = new FileInfo(path);
+            var f = new FileInfo(path);
             f.MoveTo(name);
         }
     }

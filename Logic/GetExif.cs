@@ -7,11 +7,11 @@ namespace Logic
     {
         public static string Get(string path)
         {
-            FileStream Foto = File.Open(Path.GetTempFileName(), FileMode.Open, FileAccess.Read);
+            var foto = File.Open(Path.GetTempFileName(), FileMode.Open, FileAccess.Read);
             try
             {
-                Foto = File.Open(path, FileMode.Open, FileAccess.Read); // открыли файл для чтения
-                return FindInfo(Foto);
+                foto = File.Open(path, FileMode.Open, FileAccess.Read); // открыли файл для чтения
+                return FindInfo(foto);
             }
             catch(System.Exception)
             {
@@ -19,17 +19,20 @@ namespace Logic
             }
             finally
             {
-                Foto.Close();
+                foto.Close();
             }
         }
 
-        static string FindInfo(FileStream Foto)
+        public static string FindInfo(FileStream Foto)
         {
-            BitmapDecoder decoder = JpegBitmapDecoder.Create(Foto, BitmapCreateOptions.IgnoreColorProfile, BitmapCacheOption.Default); //"распаковали" снимок и создали объект decoder
-            BitmapMetadata TmpImgEXIF = (BitmapMetadata)decoder.Frames[0].Metadata.Clone(); //считали и сохранили метаданные
-            string fileName = TmpImgEXIF.DateTaken;
+            var decoder = BitmapDecoder.Create(Foto, BitmapCreateOptions.IgnoreColorProfile, BitmapCacheOption.Default);
+            var imageMetadata = decoder.Frames[0].Metadata;
+            if (imageMetadata == null) return null;
+            var tmpImgExif = (BitmapMetadata)imageMetadata.Clone(); //считали и сохранили метаданные
+            var fileName = tmpImgExif.DateTaken;
             Foto.Close();
             return fileName;
+
         }
     }
 }

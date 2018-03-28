@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using Logic;
+using static Logic.OpenDlg;
 
 
 namespace fileRenamer
@@ -10,21 +11,18 @@ namespace fileRenamer
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
+        public MainWindow() => InitializeComponent();
 
-        private string _path = null;
+        private string _path;
 
-        private void btnReName_Click(object sender, RoutedEventArgs e)
+        private void BtnReName_Click(object sender, RoutedEventArgs e)
         {
-            ReName.Run((cmbx.SelectedItem as ComboBoxItem).Content.ToString(), _path, progressBar1, lbl_total_files);
+            ReName.Run((cmbx.SelectedItem as ComboBoxItem)?.Content.ToString(), _path, progressBar1, lbl_total_files);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            _path = openDlg.SelectFolder(_path);
+            _path = SelectFolder(_path);
             btnReName.IsEnabled = true;
             SortingBtn.IsEnabled = true;
             DeleteDublicatesBtn.IsEnabled = true;
@@ -32,12 +30,12 @@ namespace fileRenamer
 
         private void SortingBtn_Click(object sender, RoutedEventArgs e)
         {
-            Folder.Create((cmbx.SelectedItem as ComboBoxItem).Content.ToString(), _path, progressBar1, lbl_total_files);
+            Folder.Create((cmbx.SelectedItem as ComboBoxItem)?.Content.ToString(), _path, progressBar1, lbl_total_files);
         }
 
         private void DeleteDublicatesBtn_Click(object sender, RoutedEventArgs e)
         {
-            DublicateChecker.Run((cmbx.SelectedItem as ComboBoxItem).Content.ToString(), _path, progressBar1, lbl_total_files);
+            DublicateChecker.Run((cmbx.SelectedItem as ComboBoxItem)?.Content.ToString(), _path, progressBar1, lbl_total_files);
         }
     }
 }

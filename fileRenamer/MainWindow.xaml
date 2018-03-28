@@ -10,7 +10,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btnReName" Content="Rename" HorizontalAlignment="Left" Height="22" Margin="185,14,0,0" VerticalAlignment="Top" Width="100" Click="btnReName_Click" IsEnabled="False"
+        <Button x:Name="btnReName" Content="Rename" HorizontalAlignment="Left" Height="22" Margin="185,14,0,0" VerticalAlignment="Top" Width="100" Click="BtnReName_Click" IsEnabled="False"
                 ToolTip="Rename images in the selected folder" ToolTipService.ShowOnDisabled="True"/>
         <ComboBox x:Name="cmbx" HorizontalAlignment="Left" Margin="18,14,0,0" VerticalAlignment="Top" Width="70" SelectedIndex="0" Height="22" ToolTip="Select image extention">
             <ComboBoxItem>*.jpg</ComboBoxItem>

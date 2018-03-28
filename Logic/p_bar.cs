@@ -1,33 +1,38 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace Logic
 {
-    public static class p_bar
+    public static class PBar
     {
-        public static void Init(ProgressBar p_bar, int max_value)
+        public static void Init(ProgressBar pBar, int maxValue)
         {
-            p_bar.Value = 0;
-            p_bar.Maximum = max_value;
+            pBar.Value = 0;
+            pBar.Maximum = maxValue;
         }
 
-        public static void Init(System.Windows.Controls.ProgressBar p_bar, int max_value)
+        public static void Init(System.Windows.Controls.ProgressBar pBar, int maxValue)
         {
-            p_bar.Value = 0;
-            p_bar.Maximum = max_value;
+            if (pBar == null) throw new ArgumentNullException(nameof(pBar));
+            pBar.Value = 0;
+            pBar.Maximum = maxValue;
         }
 
-        public static void Run(ProgressBar p_bar, int filesCount, Label lbl_totalFiles, int filesDone)
+        public static void Run(ProgressBar pBar, int filesCount, Label lblTotalFiles, int filesDone)
         {
-            if (p_bar.Value < filesCount) p_bar.Value++;
+            if (pBar == null) throw new ArgumentNullException(nameof(pBar));
+            if (pBar.Value < filesCount) pBar.Value++;
             Application.DoEvents();
-            lbl_totalFiles.Text = filesDone.ToString();
+            lblTotalFiles.Text = filesDone.ToString();
         }
 
-        public static void Run(System.Windows.Controls.ProgressBar p_bar, int filesCount, System.Windows.Controls.Label lbl_totalFiles, int filesDone)
+        public static void Run(System.Windows.Controls.ProgressBar pBar, int filesCount, System.Windows.Controls.Label lblTotalFiles, int filesDone)
         {
-            if (p_bar.Value < filesCount) p_bar.Value++;
+            if (pBar == null) throw new ArgumentNullException(nameof(pBar));
+            if (lblTotalFiles == null) throw new ArgumentNullException(nameof(lblTotalFiles));
+            if (pBar.Value < filesCount) pBar.Value++;
             Application.DoEvents();
-            lbl_totalFiles.Content = filesDone.ToString();
+            lblTotalFiles.Content = filesDone.ToString();
         }
     }
 }
