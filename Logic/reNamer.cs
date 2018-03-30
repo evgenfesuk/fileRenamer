@@ -1,4 +1,7 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Windows.Documents;
 using System.Windows.Forms;
 
 namespace Logic
@@ -7,14 +10,12 @@ namespace Logic
     {
         public static void Run(string imgFormat, string _path, ProgressBar bar, Label lblTotalFiles)
         {
-            var dirs = Directory.GetFiles(_path, imgFormat);
-
-            int filesCount = 0, filesDone = 0;
-            foreach (var path in dirs) filesCount++;
+            IEnumerable<string> dirs = Directory.GetFiles(_path, imgFormat);
+            int filesCount = dirs.ToList().Count, filesDone = 0;
 
             PBar.Init(bar, filesCount);
 
-            foreach (string path in dirs)
+            foreach (var path in dirs)
             {
                 Name.FileCreate(path);
                 filesDone++;
