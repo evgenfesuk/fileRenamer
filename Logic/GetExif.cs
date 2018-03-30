@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Windows.Media.Imaging;
 
 namespace Logic
@@ -7,13 +8,14 @@ namespace Logic
     {
         public static string Get(string path)
         {
+            if (path == null) throw new ArgumentNullException(nameof(path));
             var foto = File.Open(Path.GetTempFileName(), FileMode.Open, FileAccess.Read);
             try
             {
                 foto = File.Open(path, FileMode.Open, FileAccess.Read); // открыли файл для чтения
                 return FindInfo(foto);
             }
-            catch(System.Exception)
+            catch(Exception)
             {
                 return "Corrupted file";
             }
@@ -23,14 +25,15 @@ namespace Logic
             }
         }
 
-        public static string FindInfo(FileStream Foto)
+        public static string FindInfo(FileStream foto)
         {
-            var decoder = BitmapDecoder.Create(Foto, BitmapCreateOptions.IgnoreColorProfile, BitmapCacheOption.Default);
+            if (foto == null) throw new ArgumentNullException(nameof(foto));
+            var decoder = BitmapDecoder.Create(foto, BitmapCreateOptions.IgnoreColorProfile, BitmapCacheOption.Default);
             var imageMetadata = decoder.Frames[0].Metadata;
             if (imageMetadata == null) return null;
             var tmpImgExif = (BitmapMetadata)imageMetadata.Clone(); //считали и сохранили метаданные
             var fileName = tmpImgExif.DateTaken;
-            Foto.Close();
+            foto.Close();
             return fileName;
 
         }
