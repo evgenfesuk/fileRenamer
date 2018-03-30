@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fileRenamer(v.2.0)", "fileR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj", "{CADAA209-4EA2-4D6A-814E-0353DB0D436B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fileRenamer.Unit.Test", "fileRenamer.Unit.Test\fileRenamer.Unit.Test.csproj", "{AAFFF33D-8D85-4D13-9E1C-5D4CB24BFD7A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CADAA209-4EA2-4D6A-814E-0353DB0D436B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CADAA209-4EA2-4D6A-814E-0353DB0D436B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CADAA209-4EA2-4D6A-814E-0353DB0D436B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAFFF33D-8D85-4D13-9E1C-5D4CB24BFD7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAFFF33D-8D85-4D13-9E1C-5D4CB24BFD7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAFFF33D-8D85-4D13-9E1C-5D4CB24BFD7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAFFF33D-8D85-4D13-9E1C-5D4CB24BFD7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
