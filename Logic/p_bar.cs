@@ -11,7 +11,7 @@ namespace Logic
             pBar.Maximum = maxValue;
         }
 
-        public static void Init(System.Windows.Controls.ProgressBar pBar, int maxValue)
+        public static void Init(System.Windows.Controls.ProgressBar pBar, in int maxValue)
         {
             if (pBar == null) throw new ArgumentNullException(nameof(pBar));
             pBar.Value = 0;

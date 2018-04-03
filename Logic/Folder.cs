@@ -12,7 +12,7 @@ namespace Logic
             int filesCount = 0, filesDone = 0;
             filesCount += dirs.Count(path => char.IsDigit(Path.GetFileNameWithoutExtension(path).Substring(0, 1), 0));
 
-            PBar.Init(bar, filesCount);
+            PBar.Init(bar, in filesCount);
             lbl_totalFiles.Content = "0";
 
             foreach (var path in dirs)

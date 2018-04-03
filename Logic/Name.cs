@@ -5,7 +5,7 @@ namespace Logic
 {
     public static class Name
     {
-        private static string Create(string path)
+        private static string Create(in string path)
         {
             var name = ExifInfo.Get(path);
             if (name!=null)
@@ -16,7 +16,7 @@ namespace Logic
             return Path.Combine(Path.GetDirectoryName(path) ?? throw new InvalidOperationException(), ("No date" + Path.GetExtension(path)));
         }
 
-        private static string Create(string path, int counter)
+        private static string Create(in string path, int counter)
         {
             var name = ExifInfo.Get(path);
             if (name != null)
@@ -35,12 +35,12 @@ namespace Logic
             return fileName;
         }
 
-        public static void FileCreate(string path)
+        public static void FileCreate(in string path)
         {
             var counter = 1;
-            var name = Create(path);
+            var name = Create(in path);
 
-            while (File.Exists(name)) name = Create(path, ++counter);
+            while (File.Exists(name)) name = Create(in path, ++counter);
             var f = new FileInfo(path);
             f.MoveTo(name);
         }

@@ -17,7 +17,7 @@ namespace fileRenamer
 
         private void BtnReName_Click(object sender, RoutedEventArgs e)
         {
-            ReName.Run((cmbx.SelectedItem as ComboBoxItem)?.Content.ToString(), _path, progressBar1, lbl_total_files);
+            ReName.Run((cmbx.SelectedItem as ComboBoxItem)?.Content.ToString(), in _path, in progressBar1, in lbl_total_files);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
