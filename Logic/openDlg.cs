@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace Logic
 {
@@ -6,11 +7,9 @@ namespace Logic
     {
         public static string SelectFolder(string fldr)
         {
-            var dlg = new FolderBrowserDialog();
-            if (fldr != null) dlg.SelectedPath = fldr;
+            var dlg = new FolderBrowserDialog {SelectedPath = fldr};
             dlg.ShowDialog();
             return dlg.SelectedPath;
-
         }
     }
 }

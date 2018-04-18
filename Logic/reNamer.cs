@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -24,16 +25,23 @@ namespace Logic
 
         public static void Run(string imgFormat, in string _path, in System.Windows.Controls.ProgressBar bar, in System.Windows.Controls.Label lblTotalFiles)
         {
-            IEnumerable<string> dirs = Directory.GetFiles(_path, imgFormat);
-            int filesCount = dirs.ToList().Count, filesDone = 0;
-
-            PBar.Init(bar, in filesCount);
-
-            foreach (var path in dirs)
+            try
             {
-                Name.FileCreate(in path);
-                filesDone++;
-                PBar.Run(bar, filesCount, lblTotalFiles, filesDone);
+                IEnumerable<string> dirs = Directory.GetFiles(_path, imgFormat);
+                int filesCount = dirs.ToList().Count, filesDone = 0;
+
+                PBar.Init(bar, in filesCount);
+
+                foreach (var path in dirs)
+                {
+                    Name.FileCreate(in path);
+                    filesDone++;
+                    PBar.Run(bar, filesCount, lblTotalFiles, filesDone);
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
             }
         }
     }

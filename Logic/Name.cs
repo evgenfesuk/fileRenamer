@@ -8,11 +8,10 @@ namespace Logic
         private static string Create(in string path)
         {
             var name = ExifInfo.Get(path);
-            if (name!=null)
+            if (name != null)
             {
-                return name== "Corrupted file" ? Path.Combine(Path.GetDirectoryName(path) ?? throw new InvalidOperationException(), name + Path.GetExtension(path)) : Path.Combine(Path.GetDirectoryName(path) ?? throw new InvalidOperationException(), MakeGoodName(name + Path.GetExtension(path)));
+                return name == "Corrupted file" ? Path.Combine(Path.GetDirectoryName(path) ?? throw new InvalidOperationException(), name + Path.GetExtension(path)) : Path.Combine(Path.GetDirectoryName(path) ?? throw new InvalidOperationException(), MakeGoodName(name + Path.GetExtension(path)));
             }
-
             return Path.Combine(Path.GetDirectoryName(path) ?? throw new InvalidOperationException(), ("No date" + Path.GetExtension(path)));
         }
 
